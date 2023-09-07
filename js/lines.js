@@ -26,12 +26,12 @@ var mouseX = 0, mouseY = 0,
                 container = document.getElementById("canvas");
 
 
-                camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+                camera = new FLOW.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
                 camera.position.z = 100;
 
-                scene = new THREE.Scene();
+                scene = new FLOW.Scene();
 
-                renderer = new THREE.CanvasRenderer({ alpha: true });
+                renderer = new FLOW.CanvasRenderer({ alpha: true });
                 renderer.setPixelRatio( window.devicePixelRatio );
                 renderer.setClearColor( 0x000000, 0 );   // canvas background color
                 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -40,7 +40,7 @@ var mouseX = 0, mouseY = 0,
                
 
                 var PI2 = Math.PI * 2;
-                var material = new THREE.SpriteCanvasMaterial( {
+                var material = new FLOW.SpriteCanvasMaterial( {
 
                     color: color,
                     opacity: 0.5,
@@ -54,14 +54,14 @@ var mouseX = 0, mouseY = 0,
 
                 } );
 
-                var geometry = new THREE.Geometry();
+                var geometry = new FLOW.Geometry();
 
                 /*
                  *   Number of particles
                  */
                 for ( var i = 0; i < 50; i ++ ) {
 
-                    particle = new THREE.Sprite( material );
+                    particle = new FLOW.Sprite( material );
                     particle.position.x = Math.random() * 2 - 1;
                     particle.position.y = Math.random() * 2 - 1;
                     particle.position.z = Math.random() * 2 - 1;
@@ -79,7 +79,7 @@ var mouseX = 0, mouseY = 0,
                  *   Lines
                  */
 
-                var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: color, opacity: 0.6 } ) );
+                var line = new FLOW.Line( geometry, new FLOW.LineBasicMaterial( { color: color, opacity: 0.6 } ) );
                 scene.add( line );
 
                 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
