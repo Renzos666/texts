@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SOMEHOW</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <style>
+            body {
+                background-color: #000000;
+                margin: 0px;
+                overflow: hidden;
+                font-family:arial;
+                color:#fff;
+                align-content:center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                vertical-align: middle;
+
+            
+            }
+            h1{
+                margin:0;
+                display: inline-block;
+                vertical-align: middle;
+            
+            }
+
+            a {
+                color:#9900ff;
+            }
+            #canvas{
+                width:100%;
+                height:100vh;
+                overflow: hidden;
+                position:absolute;
+                top:0;
+                left:0;
+                background-color: #000000;               
+            }
+            .canvas-wrap{
+                position:static;
+                 display:contents;
+                vertical-align: middle;
+              
+                
+            }
+         /*   div.words{
+                position:relative;
+                z-index:2000;
+                color:#fff;
+                text-align:center;
+                padding-top:300px;
+            }  */
+            
+            #dicho{
+                position:relative;
+                z-index:9999;
+                color:#fff;
+                text-align:center;
+                align-content:center;
+                font-size: 1.8vw;
+                padding-top:50vh;
+                padding-bottom:5%;
+                padding-right:5%;
+                padding-left:5%;
+                margin:0;
+              
+           
+            }
+        </style>
+        
+        
+<script type="text/javaScript">
+var i=0;
+var dichos =  new Array(
+'El tiempo es lo único que no volverá a pesar de tus deseos.',
+'La vida es tan absurda como es tu propia forma de pensar.',
+'Las consecuencias de tus actos no solo afectan un momento, cambian tu mundo por completo.',
+'Los secretos del universo distante se encuentran ocultos en el lugar mas cercano que puedas imaginar.',
+'Dios solo es grande para quien así lo cree.',
+'Las ilusiones son fragmentos de grandeza que no tenemos.',
+'La vida solo es un sueño para quien se la pasa dormido.',
+'Virtuosa es aquella persona que brilla por su propia inteligencia.',
+'E = mc² >>> (Estamos igual, Muy CansaDos pequeño)',
+'Aquel que respeta la vida y su entorno ya vivio este ciclo muchas veces.',
+'La belleza de un alma pura es siempre contaminada por el que observa sin respeto.',
+'El silencio es el ingrediente perfecto para quien mucho escucha.',
+'No importa qué tanto entregues al mundo, siempre serás lo suficientemente pequeño para ser ignorado.',
+'La desilusión por desamor es una daga que cala profundamente hasta cortar la venda de nuestros ojos.',
+'Si alguien dice que te ama constantemente, probablemente se lo esta repitiendo a si mismo.',
+'Todos aquellos pensamientos que tratan de destruir tu entorno solo demuestran la inconformidad con la que vives a diario.',
+'Aquellos momentos abrumadores que nos invitan a gritar con furia a la nada, nos demuestran lo pequeños que nos sentimos ante situaciones que vemos como gigantes.',
+'Aveces quiero volver al pasado para tratar de variar las cosas, luego recuerdo que el ciclo va en bucle y la constante solo pasa a ser un capricho mas que una variable.');
+    
+function cambiaDicho()
+    {document.getElementById('dicho').innerHTML=dichos[parseInt(Math.random() * dichos.length)];}
+   // <!--Campo de codigo Desactivado-->
+//        {document.getElementById('dicho').innerHTML=dichos[i];
+//i++;
+//if(i==dichos.length){i=0;}
+//}
+</script>
+        
+    </head>
+    <body onload="setInterval(cambiaDicho,8888)">
+
+        <section class="canvas-wrap">
+            <div id="dicho" class="dicho">
+                <h1>''''</h1>
+            </div>
+            <div id="canvas" class="gradient"></div>
+            
+        </section>
+        
+        <!-- Main library -->
+        <script src="js/three.min.js"></script>
+      
+        <!-- Helpers -->
+        <script src="js/projector.js"></script>
+        <script src="js/canvas-renderer.js"></script>
+
+        <!-- Visualitzation adjustments -->
+        <script src="js/3d-lines-animation.js"></script>
+
+        <!-- Animated background color -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="js/color.js"></script>
+        
+        <!-- Text to show-->
+        <script src="./textos.txt"></script>
+
+    </body>
+</html>
